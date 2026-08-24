@@ -69,3 +69,12 @@ paystack-spec-enriched/
 For detailed technical guidelines on how downstream tools consume this enriched spec:
 - Refer to [INTEGRATION.md](file:///home/alex-muturi/alex/alex-paystack/paystack-spec-enriched/INTEGRATION.md) for full integration architecture covering `paystack-sdk-gen`, `paystack-cli`, and `paystack-docs`.
 
+---
+
+## License & Assessment Notice
+
+This repository was created by Alex Muturi as part of the technical assessment for the DevEx Lead position at Paystack.
+
+This project is licensed under the [Candidate Assessment License](LICENSE) strictly for candidate evaluation and review purposes. All rights to production deployment, commercial usage, or integration into Paystack/Stripe products are reserved pending employment or licensing agreements.
+
+
