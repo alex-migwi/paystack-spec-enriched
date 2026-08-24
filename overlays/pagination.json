@@ -1,0 +1,104 @@
+{
+  "get /transaction": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /customer": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /transfer": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /transferrecipient": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /subscription": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /plan": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /refund": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /subaccount": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /page": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /dedicated_account": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /split": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /dispute": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /bulkcharge": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /product": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /storefront": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /order": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  },
+  "get /settlement": {
+    "type": "offset",
+    "pageParam": "page",
+    "limitParam": "per_page",
+    "resultsKey": "data"
+  }
+}

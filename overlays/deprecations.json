@@ -1,0 +1,4 @@
+{
+  "post /subaccount": "Use the /subaccount endpoint with the updated POST schema for split payment subaccount creation.",
+  "get /page/{id_or_slug}": "Use /page?slug={slug} for slug lookups instead."
+}

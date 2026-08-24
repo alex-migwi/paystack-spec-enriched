@@ -1,0 +1,218 @@
+{
+  "schemas": {
+    "WebhookEvent": {
+      "type": "object",
+      "required": ["event", "data"],
+      "properties": {
+        "event": {
+          "type": "string",
+          "description": "Event trigger type identifier",
+          "example": "charge.success"
+        },
+        "data": {
+          "type": "object",
+          "description": "Event payload data object"
+        }
+      },
+      "oneOf": [
+        { "$ref": "#/components/schemas/ChargeSuccessEvent" },
+        { "$ref": "#/components/schemas/TransferSuccessEvent" },
+        { "$ref": "#/components/schemas/TransferFailedEvent" },
+        { "$ref": "#/components/schemas/TransferReversedEvent" },
+        { "$ref": "#/components/schemas/SubscriptionCreateEvent" },
+        { "$ref": "#/components/schemas/SubscriptionDisableEvent" },
+        { "$ref": "#/components/schemas/InvoicePaymentFailedEvent" }
+      ],
+      "discriminator": {
+        "propertyName": "event"
+      }
+    },
+    "ChargeSuccessEvent": {
+      "type": "object",
+      "required": ["event", "data"],
+      "properties": {
+        "event": {
+          "type": "string",
+          "enum": ["charge.success"]
+        },
+        "data": {
+          "$ref": "#/components/schemas/ChargeSuccessData"
+        }
+      }
+    },
+    "ChargeSuccessData": {
+      "type": "object",
+      "required": ["id", "domain", "status", "reference", "amount", "currency", "channel"],
+      "properties": {
+        "id": { "type": "integer", "example": 3037298930 },
+        "domain": { "type": "string", "example": "test" },
+        "status": { "type": "string", "example": "success" },
+        "reference": { "type": "string", "example": "ref_tx_920381023" },
+        "amount": { "type": "integer", "description": "Amount in kobo/cents", "example": 50000 },
+        "message": { "type": "string", "nullable": true, "example": null },
+        "gateway_response": { "type": "string", "example": "Successful" },
+        "paid_at": { "type": "string", "format": "date-time", "example": "2026-08-23T19:30:00.000Z" },
+        "created_at": { "type": "string", "format": "date-time", "example": "2026-08-23T19:29:50.000Z" },
+        "channel": { "type": "string", "example": "card" },
+        "currency": { "type": "string", "example": "NGN" },
+        "ip_address": { "type": "string", "example": "102.89.23.41" },
+        "metadata": { "type": "object" },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "integer", "example": 890123 },
+            "first_name": { "type": "string", "example": "Alex" },
+            "last_name": { "type": "string", "example": "Developer" },
+            "email": { "type": "string", "example": "alex@example.com" },
+            "customer_code": { "type": "string", "example": "CUS_xn7jlww72591" }
+          }
+        },
+        "authorization": {
+          "type": "object",
+          "properties": {
+            "authorization_code": { "type": "string", "example": "AUTH_891238912" },
+            "bin": { "type": "string", "example": "408408" },
+            "last4": { "type": "string", "example": "4081" },
+            "exp_month": { "type": "string", "example": "12" },
+            "exp_year": { "type": "string", "example": "2030" },
+            "channel": { "type": "string", "example": "card" },
+            "card_type": { "type": "string", "example": "visa" },
+            "bank": { "type": "string", "example": "TEST BANK" },
+            "country_code": { "type": "string", "example": "NG" },
+            "brand": { "type": "string", "example": "visa" },
+            "reusable": { "type": "boolean", "example": true }
+          }
+        }
+      }
+    },
+    "TransferSuccessEvent": {
+      "type": "object",
+      "required": ["event", "data"],
+      "properties": {
+        "event": {
+          "type": "string",
+          "enum": ["transfer.success"]
+        },
+        "data": {
+          "$ref": "#/components/schemas/TransferSuccessData"
+        }
+      }
+    },
+    "TransferSuccessData": {
+      "type": "object",
+      "required": ["amount", "currency", "domain", "failures", "id", "integration", "reason", "reference", "source", "status", "transfer_code"],
+      "properties": {
+        "amount": { "type": "integer", "example": 100000 },
+        "currency": { "type": "string", "example": "NGN" },
+        "domain": { "type": "string", "example": "test" },
+        "id": { "type": "integer", "example": 1289381 },
+        "reason": { "type": "string", "example": "Monthly payout" },
+        "reference": { "type": "string", "example": "trf_ref_8912389" },
+        "source": { "type": "string", "example": "balance" },
+        "status": { "type": "string", "example": "success" },
+        "transfer_code": { "type": "string", "example": "TRF_w9318293812" },
+        "transferred_at": { "type": "string", "format": "date-time" },
+        "recipient": {
+          "type": "object",
+          "properties": {
+            "recipient_code": { "type": "string", "example": "RCP_89123891" },
+            "name": { "type": "string", "example": "John Doe" },
+            "type": { "type": "string", "example": "nuban" },
+            "details": {
+              "type": "object",
+              "properties": {
+                "account_number": { "type": "string", "example": "0123456789" },
+                "account_name": { "type": "string", "example": "John Doe" },
+                "bank_code": { "type": "string", "example": "058" },
+                "bank_name": { "type": "string", "example": "GTBank" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "TransferFailedEvent": {
+      "type": "object",
+      "required": ["event", "data"],
+      "properties": {
+        "event": {
+          "type": "string",
+          "enum": ["transfer.failed"]
+        },
+        "data": {
+          "$ref": "#/components/schemas/TransferSuccessData"
+        }
+      }
+    },
+    "TransferReversedEvent": {
+      "type": "object",
+      "required": ["event", "data"],
+      "properties": {
+        "event": {
+          "type": "string",
+          "enum": ["transfer.reversed"]
+        },
+        "data": {
+          "$ref": "#/components/schemas/TransferSuccessData"
+        }
+      }
+    },
+    "SubscriptionCreateEvent": {
+      "type": "object",
+      "required": ["event", "data"],
+      "properties": {
+        "event": {
+          "type": "string",
+          "enum": ["subscription.create"]
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "domain": { "type": "string", "example": "test" },
+            "status": { "type": "string", "example": "active" },
+            "subscription_code": { "type": "string", "example": "SUB_891238912" },
+            "amount": { "type": "integer", "example": 500000 },
+            "cron_expression": { "type": "string", "example": "0 0 28 * *" },
+            "next_payment_date": { "type": "string", "format": "date-time" }
+          }
+        }
+      }
+    },
+    "SubscriptionDisableEvent": {
+      "type": "object",
+      "required": ["event", "data"],
+      "properties": {
+        "event": {
+          "type": "string",
+          "enum": ["subscription.disable"]
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "domain": { "type": "string", "example": "test" },
+            "status": { "type": "string", "example": "disabled" },
+            "subscription_code": { "type": "string", "example": "SUB_891238912" }
+          }
+        }
+      }
+    },
+    "InvoicePaymentFailedEvent": {
+      "type": "object",
+      "required": ["event", "data"],
+      "properties": {
+        "event": {
+          "type": "string",
+          "enum": ["invoice.payment_failed"]
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "domain": { "type": "string", "example": "test" },
+            "invoice_code": { "type": "string", "example": "INV_891238912" },
+            "amount": { "type": "integer", "example": 250000 }
+          }
+        }
+      }
+    }
+  }
+}

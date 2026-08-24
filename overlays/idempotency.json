@@ -1,0 +1,21 @@
+[
+  "post /transaction/initialize",
+  "post /transaction/charge_authorization",
+  "post /transaction/partial_debit",
+  "post /charge",
+  "post /transfer",
+  "post /transfer/bulk",
+  "post /transferrecipient",
+  "post /transferrecipient/bulk",
+  "post /refund",
+  "post /customer",
+  "post /dedicated_account",
+  "post /subaccount",
+  "post /split",
+  "post /plan",
+  "post /subscription",
+  "post /order",
+  "post /product",
+  "post /storefront",
+  "post /page"
+]
