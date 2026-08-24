@@ -1,0 +1,10 @@
+extends:
+  - recommended
+
+rules:
+  # Turn off ambiguous paths warning caused by upstream Paystack REST endpoint routing structure
+  no-ambiguous-paths: off
+  # Require license field in API info
+  info-license: error
+  # Turn off unused components warning for standalone webhook event models
+  no-unused-components: off

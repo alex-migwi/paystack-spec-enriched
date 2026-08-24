@@ -1,0 +1,26 @@
+{
+  "name": "@alex-paystack/paystack-spec-enriched",
+  "version": "1.0.0",
+  "description": "Enriched Paystack OpenAPI Specification with x-code-samples, x-operation-id, x-idempotency, and webhook schemas",
+  "main": "dist/paystack-enriched.json",
+  "scripts": {
+    "sync": "node scripts/sync-upstream.js",
+    "build": "node scripts/build-enriched-spec.js",
+    "lint": "redocly lint dist/paystack-enriched.yaml",
+    "dev": "redocly preview-docs dist/paystack-enriched.yaml"
+  },
+  "keywords": [
+    "paystack",
+    "openapi",
+    "swagger",
+    "spec",
+    "sdk-generator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@redocly/cli": "^1.18.0",
+    "axios": "^1.7.2",
+    "js-yaml": "^4.1.0"
+  }
+}
