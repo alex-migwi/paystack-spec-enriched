@@ -1,6 +1,14 @@
 # Paystack Enriched OpenAPI Spec (`paystack-spec-enriched`)
 
-This repository serves as the single source of truth for the **Stripe-Quality Enriched Paystack OpenAPI Specification**. It synchronizes with the official `PaystackOSS/openapi` repository, applies structural, resilience, and developer-experience enrichments (`x-code-samples`, `x-operation-id`, `x-idempotency`, `x-retry-safe`, `x-dont-retry`, `x-pagination`, `x-deprecated-reason`, polymorphic webhook event schemas), and outputs unified distribution files (`dist/paystack-enriched.yaml` and `dist/paystack-enriched.json`).
+This repository serves as the single source of truth for the **Enriched Paystack OpenAPI Specification**. It synchronizes with the official `PaystackOSS/openapi` repository, applies structural, resilience, and developer-experience enrichments (`x-code-samples`, `x-operation-id`, `x-idempotency`, `x-retry-safe`, `x-dont-retry`, `x-pagination`, `x-deprecated-reason`, polymorphic webhook event schemas), and outputs unified distribution files (`dist/paystack-enriched.yaml` and `dist/paystack-enriched.json`).
+
+---
+
+### Proof of Concept
+
+This project was created as part of the DevEx Lead technical assessment at Paystack.
+
+It demonstrates the proposed approach, developer experience, and technical thinking behind the solution. The implementation is intentionally open to further refinement and iteration.
 
 ---
 
@@ -73,8 +81,8 @@ For detailed technical guidelines on how downstream tools consume this enriched 
 
 ## License & Assessment Notice
 
-This repository was created by Alex Muturi as part of the technical assessment for the DevEx Lead position at Paystack.
+This project was created as part of the DevEx Lead technical assessment at Paystack. It is a proof of concept provided for evaluation purposes.
 
-This project is licensed under the [Candidate Assessment License](LICENSE) strictly for candidate evaluation and review purposes. All rights to production deployment, commercial usage, or integration into Paystack/Stripe products are reserved pending employment or licensing agreements.
+See [LICENSE](LICENSE) for the assessment terms.
 
 
