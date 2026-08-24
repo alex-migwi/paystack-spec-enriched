@@ -1,0 +1,40 @@
+name: Sync & Build Enriched Spec
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+  workflow_dispatch: # Manual trigger
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Sync Upstream Paystack Spec
+        run: npm run sync
+
+      - name: Build Enriched OpenAPI Spec
+        run: npm run build
+
+      - name: Lint Enriched Spec
+        run: npm run lint
+
+      - name: Commit & Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(spec): sync upstream spec & rebuild enriched output [skip ci]"
+          file_pattern: "spec/upstream/paystack.yaml dist/*"
