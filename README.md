@@ -12,7 +12,7 @@ It demonstrates the proposed approach, developer experience, and technical think
 
 ---
 
-## 1. Stripe-Quality Spec Enrichment Features
+## 1. Spec Enrichment Features
 
 | Extension / Metadata | Purpose & Target Operations | Impact on Downstream SDK Generators |
 | :--- | :--- | :--- |

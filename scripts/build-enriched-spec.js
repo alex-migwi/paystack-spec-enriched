@@ -80,7 +80,7 @@ function sanitizeSchemaNode(node) {
 }
 
 function buildEnrichedSpec() {
-  console.log('[BUILD] Starting Stripe-Quality OpenAPI Spec Enrichment Pipeline...');
+  console.log('[BUILD] Starting OpenAPI Spec Enrichment Pipeline...');
 
   if (!fs.existsSync(UPSTREAM_FILE)) {
     console.error(`[BUILD ERROR] Raw spec file not found at: ${UPSTREAM_FILE}. Run 'npm run sync' first.`);
@@ -129,7 +129,7 @@ function buildEnrichedSpec() {
           operation['x-idempotency'] = true;
         }
 
-        // 3. x-retry-safe vs x-dont-retry (Stripe Retry Resilience Logic)
+        // 3. x-retry-safe vs x-dont-retry (Retry Resilience Logic)
         if (httpMethod === 'get' || isIdempotent) {
           operation['x-retry-safe'] = true;
           retrySafeCount++;

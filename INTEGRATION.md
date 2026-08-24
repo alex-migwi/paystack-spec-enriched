@@ -89,7 +89,7 @@ The CLI consumes `dist/paystack-enriched.json` to provide a scriptable command-l
 
 ## 3. Developer Portal & Interactive Docs (`paystack-docs`)
 
-The documentation site imports `dist/paystack-enriched.yaml` at build-time or runtime to render an interactive Stripe-grade API Explorer.
+The documentation site imports `dist/paystack-enriched.yaml` at build-time or runtime to render an interactive API Explorer.
 
 ### Key Integration Points:
 
