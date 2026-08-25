@@ -4,14 +4,6 @@ This repository serves as the single source of truth for the **Enriched Paystack
 
 ---
 
-### Proof of Concept
-
-This project was created as part of the DevEx Lead technical assessment at Paystack.
-
-It demonstrates the proposed approach, developer experience, and technical thinking behind the solution. The implementation is intentionally open to further refinement and iteration.
-
----
-
 ## 1. Spec Enrichment Features
 
 | Extension / Metadata | Purpose & Target Operations | Impact on Downstream SDK Generators |
@@ -79,10 +71,10 @@ For detailed technical guidelines on how downstream tools consume this enriched 
 
 ---
 
-## License & Assessment Notice
+## License Notice
 
-This project was created as part of the DevEx Lead technical assessment at Paystack. It is a proof of concept provided for evaluation purposes.
+This project was created as a proof of concept provided for evaluation purposes.
 
-See [LICENSE](LICENSE) for the assessment terms.
+See [LICENSE](LICENSE).
 
 
